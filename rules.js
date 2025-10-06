@@ -98,9 +98,24 @@ class Room extends Scene {
     }
 
     handleInteraction(a,b) {
+        if ("action" in this.engine.storyData.rooms[`{x}_{y}`]) {
+            this.engine.show(this.engine.storyData.rooms[action[action_description]])
+            var requires = this.engine.storyData.rooms[`{x}_{y}`][requires];
+            // check if player has every item listed in requires
+            for (var req_ of requires) {
+                if (player.item[req_]) {
+                    this.engine.show(this.engine.storyData.rooms[action[action_description_success]])
+                } 
+                else {
+                    this.engine.show(this.engine.storyData.rooms[action[action_description_fail]])
+                    this.engine.show(`{req_} is needed`)
+                }
+            }
+        }
         if (a == "x" && b == "y") {
             this.engine.show("Interaction successful!");
         }
+    
     }
 
     interactions(inventory, roomItems) {
