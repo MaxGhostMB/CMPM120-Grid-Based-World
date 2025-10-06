@@ -1,0 +1,68 @@
+{
+    "title": "Little red riding hood",
+    "credits": "Created by Max Brockmann (mbrockma@ucsc.edu).",
+    "start": {"x": 0, "y": 0},
+    "exit": {"x": 3, "y": 3},
+    "rooms": {
+        "0_0": {
+            "name": "Bedroom",
+            "description": "you wake up, excited to take care of your sick granny, she's bound to feel better with your yummy home made cookies.",
+            "items": ["basket"],
+            "action": {
+                "action_title" : "find your red hood",
+                "action_items" : [],
+                "action_description" : "rummaging through your closet",
+                "action_req_items" : ["flashlight"]
+            }
+        },
+        "1_0": {
+            "name": "Kitchen",
+            "description": "An almost empty hallway.",
+            "items": ["cookies", "coffee", "newspaper"],
+            "action": {
+                "action_title" : "pack your basket",
+                "action_items" : [],
+                "action_description" : ""
+            }
+        },
+        "2_1": {
+
+        },
+        "0_1": {
+            "name": "The sitting room",
+            "description": "Two couches next to a coffee table.",
+            "items": ["coffee", "newspaper", "key"]
+        },
+        "1_1": {
+
+        },
+        "2_0": {
+            "name": "Main Hall",
+            "description": "The main area of the house",
+            "items": ["cat2", "vampire", "telephone", "nazar_amulet"],
+            "requires": ["key"]
+        },
+        "3_0": {
+            "name": "Main Hall",
+            "description": "The main area of the house",
+            "items": ["cat2", "vampire", "telephone", "nazar_amulet"],
+            "requires": ["key"]
+        },
+        "0_2": {
+            "name": "Rock",
+            "description": "A very fancy kitchen. It smells like pine cones for some reason.",
+            "items": ["cat2", "broccoli", "pie", "pretzel"],
+            "requires": ["nazar_amulet"]
+        },
+        "1_2": {
+            "name": "Bushes",
+            "description": "There should be food stored here, but you find something else instead.",
+            "items": ["giraffe", "hammer"]
+        },
+        "2_2": {
+            "name": "Treasure room",
+            "description": "You have made it to your destination! Let's count how many treasures you were able to collect on your way here.",
+            "items": []
+        }
+    }
+}
