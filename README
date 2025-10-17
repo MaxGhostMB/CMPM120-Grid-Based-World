@@ -1,0 +1,9 @@
+Mouse trap
+
+the way I implemented interactions is with 3 main interactions, with subsequential sub interactions to give the player
+some agency. The 3 main triggers are between "paper" and "nail", "sawdust" and "crumbs", and "newspaper" and "cat",
+each of with has a bad outcome and a good outcome. which impact your final score at the end.
+
+the scoring system is based around the amount of food you collect throughout the house, and the amount of times you get hurt or experence a conseqence, +10 for each food item, -10 for each time you get chased by the house cat, or clip a nail.
+
+I added a couple of locks you can't complete the game without finding, most are trigged through the right interaction or by collecting an item and bringing it to the right location. 

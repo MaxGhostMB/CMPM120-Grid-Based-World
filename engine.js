@@ -38,6 +38,18 @@ class Engine {
         }
     }
 
+    addExlusiveInteraction(action, ...data){
+        let div = this.actionsContainer.appendChild(document.createElement("div"));
+        let button = div.appendChild(document.createElement("button"));
+        button.innerText = action;
+        button.onclick = () => {
+            while(this.actionsContainer.firstChild) {
+                this.actionsContainer.removeChild(this.actionsContainer.firstChild);
+            }
+            this.scene.handleInteraction(...data);
+        }
+    }
+
     addNavigationCell(action, ...data) {
         let div = this.actionsGridContainer.appendChild(document.createElement("div"));
         div.className = "square";
@@ -52,6 +64,26 @@ class Engine {
                 this.actionsContainer.removeChild(this.actionsContainer.firstChild)
             }
             this.scene.handleNavigation(...data);
+        }
+    }
+
+    addInactiveNavigationCell(action, ...data) {
+        let div = this.actionsGridContainer.appendChild(document.createElement("div"));
+        div.className = "square";
+        let button = div.appendChild(document.createElement("button"));
+        button.className = "navigation";
+        button.innerText = action;
+        button.onclick = () => {
+            let can_enter = this.scene.handleInactiveNavigation(...data);
+            if (can_enter) {
+                while(this.actionsGridContainer.firstChild) {
+                this.actionsGridContainer.removeChild(this.actionsGridContainer.firstChild)
+                }
+                while(this.actionsContainer.firstChild) {
+                    this.actionsContainer.removeChild(this.actionsContainer.firstChild)
+                }
+                this.scene.handleNavigation(...data);
+            }
         }
     }
 
